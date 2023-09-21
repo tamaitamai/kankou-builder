@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/user/login.css" th:href="@{/css/user/login.css}">
+    <title>Document</title>
+</head>
+<body>
+    <html th:insert="~{main/header :: frag_header}"></html>
+    <main>
+        <h1>ログイン</h1>
+        <form th:action="@{/user/login}" method="post" class="login-box" th:object="${userForm}">
+            <div th:errors="*{mail}" style="color:red"></div>
+            <p>メール：<input type="text" name="mail" class="mail"></p>
+            <div th:errors="*{password}" style="color:red"></div>
+            <p>パスワード：<input type="text" name="password" class="password"></p>
+            <button class="btn">送信</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+header{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    box-shadow: 7px 7px wheat;
+}
+
+.home,.login{
+    display: flex;    
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+}
+
+.home{
+    order: 1;
+}
+
+.login{
+    order: 2;
+}
+
+.header-btn{
+    width: 120px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+}
+
+.header-btn:hover{
+    opacity: 0.7;
+}

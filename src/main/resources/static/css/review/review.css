@@ -1,0 +1,38 @@
+.review-main,.review-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.review-box{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0px 30px 30px 30px;
+}
+
+.review-name,.review-comment{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.review-comment{
+    height: 100px;
+}
+
+.review-rank{
+    font-size: 30px;
+}
+
+.review-btn{
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+.review-btn:hover{
+    opacity: 0.7;
+}
+

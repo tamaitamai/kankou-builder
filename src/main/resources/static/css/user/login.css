@@ -1,0 +1,32 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-box{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.mail,.password{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+.btn:hover{
+    opacity: 0.7;
+}

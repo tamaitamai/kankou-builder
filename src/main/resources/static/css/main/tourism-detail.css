@@ -1,0 +1,66 @@
+.detail-list{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 100px;
+}
+
+.detail-image{
+    width: 600px;
+    height: 400px;
+    margin-right: 100px;
+}
+
+.detail-name{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.detail-explanation{
+    font-size: 20px;   
+}
+
+.average-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.average-star{
+    font-size: 30px;
+    color:rgb(245, 245, 19);    
+}
+
+.average-rank{
+    font-size: 30px;
+}
+
+.review-btn-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.review-btn{
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.review-btn:hover{
+    opacity: 0.7;
+}
+
+.review-box{
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 300px;
+    padding: 10px;
+}
+
+.review-rank{
+    color: rgb(245, 245, 19);
+    font-size: 20px;
+}
