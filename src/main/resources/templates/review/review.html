@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/review/review.css" th:href="@{/css/review/review.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <html th:insert="~{/main/header :: frag_header}"></html>
+
+    <!-- 新規レビューの場合 -->
+    <div th:unless="${session.reviewExists==true}">
+        <div class="review-main">
+            <h1>レビュー投稿</h1>
+            <form th:action="@{/review/addReview}" method="post" class="review-box">
+                <p>名前：</p>
+                <input type="text" class="review-name" name="name">
+                <p>コメント：</p>
+                <textarea name="comment" cols="30" rows="10" class="review-comment"></textarea>
+                <p class="review-rank">評価：
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                </p>
+                <button class="review-btn">投稿</button>
+                <input type="hidden" name="rank" class="review-rank-value">
+            </form>
+        </div>
+    </div>
+
+    <!-- レビュー更新の場合 -->
+    <div th:if="${session.reviewExists==true}">
+        <div class="review-main">
+            <h1>レビュー更新</h1>
+            <form th:action="@{/review/addReview}" method="post" class="review-box">
+                <p>名前：</p>
+                <input type="text" class="review-name" name="name" th:value="${session.review.name}">
+                <p>コメント：</p>
+                <textarea name="comment" cols="30" rows="10" class="review-comment" th:text="${session.review.comment}"></textarea>
+                
+                <p class="review-rank">評価：
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                    <span class="review-star">☆</span>
+                </p>
+                <button class="review-btn">投稿</button>
+                <input type="hidden" name="rank" class="review-rank-value" th:value="${session.review.rank}">
+            </form>
+        </div>
+    </div>
+    
+    <script src="../../static/js/review/review.js" th:src="@{/js/review/review.js}"></script>
+</body>
+</html>

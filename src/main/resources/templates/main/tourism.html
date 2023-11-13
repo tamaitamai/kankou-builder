@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/main/tourism.css" th:href="@{/css/main/tourism.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <html th:insert="main/header :: frag_header"></html>
+
+    <!-- 絞り込み一覧 -->
+    <div class="select-list">
+        <select name="prefecture" class="prefecture-select">
+            <option value="">すべて</option>
+            <div th:each="prefecture:${session.prefectureList}">
+                <option th:text="${prefecture}"></option>
+            </div>
+        </select>
+    </div>
+
+    <!-- 観光地一覧 -->
+    <div class="tourism-list"></div>
+    <script src="../../static/js/main/tourism.js" th:src="@{/js/main/tourism.js}"></script>
+</body>
+</html>

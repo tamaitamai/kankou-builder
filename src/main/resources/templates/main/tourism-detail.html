@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/main/tourism-detail.css" th:href="@{/css/main/tourism-detail.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <html th:insert="~{/main/header :: frag_header}"></html>
+
+    <!-- 観光地の詳細を表示 -->
+    <div th:each="tourism:${session.tourismDetail}" class="detail-list">
+        <img th:src="@{/image/}+${tourism.image}" class="detail-image">        
+        <div class="detail-message">
+            <div th:text="${tourism.name}" class="detail-name"></div>  
+            <div class="average-box">
+                <span class="average-star">★</span><div th:text="${session.averageRank}" class="average-rank"></div>      
+            </div>            
+            <div th:text="${tourism.explanation}" class="detail-explanation"></div>
+        </div>
+    </div>
+
+    <!-- レビューの新規投稿の場合 -->
+    <div th:unless="${session.reviewExists==true}">
+        <form th:action="@{/review}" method="post" class="review-btn-box">
+            <button class="review-btn">レビューを投稿</button>
+        </form>
+    </div>
+
+    <!-- レビューが投稿済みの場合 -->
+    <div th:if="${session.reviewExists==true}">
+        <form th:action="@{/review}" method="post" class="review-btn-box">
+            <button class="review-btn">レビューを編集</button>
+        </form>
+    </div>
+
+    <!-- レビュー一覧を表示 -->
+    <div th:each="review:${session.reviewList}" class="review-list">
+        <div class="review-box">
+            <div th:text="${review.name}" class="review-name"></div>
+            <div class="review-rank"></div>
+            <input type="hidden" class="review-rank-value" th:value="${review.rank}">
+            <div th:text="${review.comment}" class="review-comment"></div>
+        </div>
+    </div>
+
+    <script src="../../static/js/main/tourism-detail.js" th:src="@{/js/main/tourism-detail.js}"></script>
+</body>
+</html>
